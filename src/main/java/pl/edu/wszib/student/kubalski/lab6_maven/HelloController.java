@@ -2,7 +2,9 @@ package pl.edu.wszib.student.kubalski.lab6_maven;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class HelloController {
     @FXML
     private Label welcomeText;

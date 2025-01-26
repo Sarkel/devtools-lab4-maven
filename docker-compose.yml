@@ -1,0 +1,14 @@
+version: '3.9'
+
+name: lab6_maven
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: lab6_maven
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: lab6_maven
+      POSTGRES_PASSWORD: lab6_maven
+      POSTGRES_DB: lab6_maven
