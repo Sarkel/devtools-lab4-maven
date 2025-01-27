@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "app.property.width",
+      "type": "java.lang.Integer",
+      "description": "Description for app.property.width."
+    },
+    {
+      "name": "app.property.height",
+      "type": "java.lang.Integer",
+      "description": "Description for app.property.height."
+    }
+  ] }

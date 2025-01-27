@@ -57,11 +57,25 @@
             <version>42.7.4</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.flywaydb</groupId>-->
-<!--            <artifactId>flyway-core</artifactId>-->
-<!--            <version>10.15.2</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+            <version>10.14.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -90,7 +104,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                pl.edu.wszib.student.kubalski.lab6_maven/pl.edu.wszib.student.kubalski.lab6_maven.HelloApplication
+                                pl.edu.wszib.student.kubalski.lab6_maven/pl.edu.wszib.student.kubalski.lab6_maven.SchoolHelperApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
