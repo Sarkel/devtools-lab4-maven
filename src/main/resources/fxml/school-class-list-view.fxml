@@ -5,9 +5,11 @@
 <?import javafx.scene.control.Button?>
 
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.text.Text?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="pl.edu.wszib.student.kubalski.lab6_maven.controllers.SchoolClassListViewController">
 
+    <Text>List of school classes</Text>
     <Button text="Add School Class" onAction="#addSchoolClass" alignment="BASELINE_LEFT"/>
     <TableView fx:id="schoolClassTableView" onMouseClicked="#goToSchoolClassDetails"/>
 </VBox>

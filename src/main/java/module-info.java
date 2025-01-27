@@ -11,6 +11,8 @@ module pl.edu.wszib.student.kubalski.lab6_maven {
     requires static lombok;
     requires jakarta.annotation;
     requires jakarta.validation;
+    requires java.desktop;
+    requires spring.data.commons;
 
     opens pl.edu.wszib.student.kubalski.lab6_maven;
     opens pl.edu.wszib.student.kubalski.lab6_maven.entities;
@@ -18,6 +20,8 @@ module pl.edu.wszib.student.kubalski.lab6_maven {
     opens pl.edu.wszib.student.kubalski.lab6_maven.controllers;
     opens pl.edu.wszib.student.kubalski.lab6_maven.services.domain.schoolclass;
     opens pl.edu.wszib.student.kubalski.lab6_maven.services.domain.schoolclass.dto;
+    opens pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student;
+    opens pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student.dto;
     opens pl.edu.wszib.student.kubalski.lab6_maven.services.config;
     opens db.migration;
     opens pl.edu.wszib.student.kubalski.lab6_maven.routing;
@@ -30,7 +34,8 @@ module pl.edu.wszib.student.kubalski.lab6_maven {
     exports pl.edu.wszib.student.kubalski.lab6_maven.services.config;
     exports pl.edu.wszib.student.kubalski.lab6_maven.services.domain.schoolclass;
     exports pl.edu.wszib.student.kubalski.lab6_maven.services.domain.schoolclass.dto;
+    exports pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student;
+    exports pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student.dto;
     exports pl.edu.wszib.student.kubalski.lab6_maven.routing;
     exports pl.edu.wszib.student.kubalski.lab6_maven.util;
-
 }

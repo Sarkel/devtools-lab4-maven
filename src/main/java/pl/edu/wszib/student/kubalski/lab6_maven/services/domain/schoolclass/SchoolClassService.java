@@ -10,6 +10,7 @@ import pl.edu.wszib.student.kubalski.lab6_maven.services.domain.schoolclass.dto.
 import pl.edu.wszib.student.kubalski.lab6_maven.util.DmlResult;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -20,6 +21,10 @@ public class SchoolClassService {
 
     public List<SchoolClass> findAll() {
         return schoolClassRepository.findAll();
+    }
+
+    public Optional<SchoolClass> findById(Long id) {
+        return schoolClassRepository.findById(id);
     }
 
     public DmlResult create(NewSchoolClassDTO newSchoolClassDTO) {

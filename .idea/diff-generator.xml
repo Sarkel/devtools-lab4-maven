@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DiffGenerationConfig">
+  <component name="DiffGenerationConfig" isInitGenerateDdl="true">
+    <option name="initGenerateDdl" value="true" />
     <option name="snapshotDb" value="false" />
     <option name="snapshotModelValue" value="lab6_maven:lab6_maven" />
+    <option name="sourceModelValue" value="lab6_maven:lab6_maven" />
+    <option name="targetDbValue" value="ee217ac6-9e08-49b0-ba6a-48e4df987307" />
   </component>
 </project>
