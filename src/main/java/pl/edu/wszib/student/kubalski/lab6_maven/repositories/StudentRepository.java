@@ -5,8 +5,11 @@ import org.springframework.stereotype.Repository;
 import pl.edu.wszib.student.kubalski.lab6_maven.entities.Student;
 
 import java.util.List;
+import java.util.Set;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
-    List<Student> findStudentsBySchoolClassId(Long schoolClassId);
+    List<Student> findStudentsBySchoolClassId(Long id);
+
+    List<Student> findAllBySchoolClassIds(Set<Long> ids);
 }

@@ -39,19 +39,26 @@ public class AddSchoolClassViewController {
     private Label gradeLevelErrorLabel;
 
     @FXML
+    private TextField schoolYearTextField;
+
+    @FXML
+    private Label schoolYearErrorLabel;
+
+    @FXML
     public void cancel() {
         routeService.switchScene(Route.SCHOOL_CLASS_LIST);
     }
 
     @FXML
     public void save() {
-        NewSchoolClassDTO newSchoolClassDTO = NewSchoolClassDTO.builder()
+        NewSchoolClassDTO schoolClassDTO = NewSchoolClassDTO.builder()
                 .name(nameTextField.getText())
                 .teacherName(teacherNameTextField.getText())
                 .gradeLevel(gradeLevelTextField.getText())
+                .schoolYear(schoolYearTextField.getText())
                 .build();
 
-        DmlResult dmlResult = schoolClassService.create(newSchoolClassDTO);
+        DmlResult dmlResult = schoolClassService.create(schoolClassDTO);
 
         if (dmlResult.hasErrors()) {
             dmlResult.getErrors().forEach((fieldName, errors) -> {
@@ -70,6 +77,9 @@ public class AddSchoolClassViewController {
                         gradeLevelErrorLabel.setText(errorMessage);
                         gradeLevelErrorLabel.setVisible(true);
                         break;
+                    case "schoolYear":
+                        schoolYearErrorLabel.setText(errorMessage);
+                        schoolYearErrorLabel.setVisible(true);
                     default:
                         // Handle unknown fields
                         System.err.println("Unhandled field: " + fieldName + " has errors: " + errors);

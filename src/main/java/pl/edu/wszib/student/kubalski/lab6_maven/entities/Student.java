@@ -1,10 +1,7 @@
 package pl.edu.wszib.student.kubalski.lab6_maven.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.context.annotation.Lazy;
 
 import java.util.List;
@@ -13,7 +10,7 @@ import java.util.List;
 @Table(schema = "lab6_maven")
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Setter
 @Getter
 public class Student {
     @Id

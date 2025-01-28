@@ -13,6 +13,7 @@ module pl.edu.wszib.student.kubalski.lab6_maven {
     requires jakarta.validation;
     requires java.desktop;
     requires spring.data.commons;
+    requires org.mapstruct;
 
     opens pl.edu.wszib.student.kubalski.lab6_maven;
     opens pl.edu.wszib.student.kubalski.lab6_maven.entities;

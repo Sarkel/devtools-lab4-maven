@@ -3,44 +3,46 @@ package pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.edu.wszib.student.kubalski.lab6_maven.entities.Student;
-import pl.edu.wszib.student.kubalski.lab6_maven.entities.StudentGrade;
 import pl.edu.wszib.student.kubalski.lab6_maven.repositories.StudentRepository;
+import pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student.dto.StudentDTO;
 import pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student.dto.StudentWithAverageGradeDTO;
+import pl.edu.wszib.student.kubalski.lab6_maven.services.domain.studentgrade.StudentGradeService;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class StudentService {
     private final StudentRepository studentRepository;
+    private final StudentGradeService studentGradeService;
+    private final StudentMapper studentMapper;
 
-    public Optional<Student> findById(Long id) {
-        return studentRepository.findById(id);
+    public Optional<StudentDTO> findById(Long id) {
+        return studentRepository.findById(id).map(studentMapper::toDTO);
     }
 
     public List<StudentWithAverageGradeDTO> findBySchoolClassId(Long schoolClassId) {
-        return studentRepository.findStudentsBySchoolClassId(schoolClassId).stream()
-                .map(s -> {
-                    List<StudentGrade> averageGrades = s.getStudentGrades();
+        final List<Student> students = studentRepository.findStudentsBySchoolClassId(schoolClassId);
 
-                    int totalWeight = averageGrades.stream()
-                            .mapToInt(StudentGrade::getWeight)
-                            .sum();
+        final Set<Long> studentIds = students.stream()
+                .map(Student::getId)
+                .collect(Collectors.toSet());
 
-                    int totalWeightedGrade = averageGrades.stream()
-                            .mapToInt(sg -> sg.getWeight() * sg.getGrade())
-                            .sum();
+        Map<Long, Integer> averageGradesByStudentId = studentGradeService.getAverageGradesByStudentId(studentIds);
 
-                    Integer averageGrade = totalWeight == 0 ? null : totalWeightedGrade / totalWeight;
-
-                    return StudentWithAverageGradeDTO.builder()
-                            .id(s.getId())
-                            .firstName(s.getFirstName())
-                            .lastName(s.getLastName())
-                            .averageGrade(averageGrade)
-                            .build();
-                })
+        return students.stream()
+                .map(studentMapper::toWithStudentCountDTO)
+                .peek(dto -> dto.setAverageGrade(averageGradesByStudentId.get(dto.getId())))
                 .toList();
+    }
+
+    public Map<Long, Integer> findCountBySchoolClassId(Set<Long> schoolClassIds) {
+        return studentRepository.findAllBySchoolClassIds(schoolClassIds)
+                .stream()
+                .collect(Collectors.groupingBy(
+                        s -> s.getSchoolClass().getId(),
+                        Collectors.collectingAndThen(Collectors.counting(), Long::intValue)
+                ));
     }
 }

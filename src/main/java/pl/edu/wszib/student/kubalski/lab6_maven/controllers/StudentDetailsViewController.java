@@ -4,10 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import pl.edu.wszib.student.kubalski.lab6_maven.entities.Student;
 import pl.edu.wszib.student.kubalski.lab6_maven.routing.Route;
 import pl.edu.wszib.student.kubalski.lab6_maven.routing.RouteService;
 import pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student.StudentService;
+import pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student.dto.StudentDTO;
 
 @Component
 @RequiredArgsConstructor
@@ -16,7 +16,7 @@ public class StudentDetailsViewController {
     private final StudentService studentService;
 
     private Long studentId;
-    private Student student;
+    private StudentDTO student;
 
     @FXML
     private Text titleText;
@@ -33,7 +33,7 @@ public class StudentDetailsViewController {
 
     @FXML
     public void goBack() {
-        routeService.switchScene(Route.SCHOOL_CLASS_DETAILS, student.getSchoolClass().getId());
+        routeService.switchScene(Route.SCHOOL_CLASS_DETAILS, student.getSchoolClassId());
     }
 
     @FXML

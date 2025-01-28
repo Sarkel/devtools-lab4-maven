@@ -15,18 +15,28 @@ import java.util.stream.Collectors;
 public class StudentGradeService {
     private final StudentGradeRepository studentGradeRepository;
 
-    public Map<Long, Double> getAverageGradesByStudentIds(Set<Long> studentIds) {
-        Map<Long, List<StudentGrade>> results = studentGradeRepository.findAllByStudentIds(studentIds)
+    public Map<Long, Integer> getAverageGradesByStudentId(Set<Long> studentIds) {
+        return studentGradeRepository.findAllByStudentIds(studentIds)
                 .stream()
-                .collect(Collectors.groupingBy(sg -> sg.getStudent().getId()));
-
-        return results.entrySet().stream()
+                .collect(Collectors.groupingBy(sg -> sg.getStudent().getId()))
+                .entrySet()
+                .stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
-                        e -> e.getValue().stream()
-                                .mapToInt(StudentGrade::getGrade)
-                                .average()
-                                .orElse(0.0)
+                        entry -> calculateWeightedAverageGrade(entry.getValue())
                 ));
+    }
+
+    private Integer calculateWeightedAverageGrade(List<StudentGrade> studentGrades) {
+        int summedWeights = 0;
+        int summedWeightedGrades = 0;
+
+        for (StudentGrade sg : studentGrades) {
+            summedWeights += sg.getWeight();
+            summedWeightedGrades += sg.getGrade() * sg.getWeight();
+        }
+
+        return summedWeightedGrades / summedWeights;
+
     }
 }

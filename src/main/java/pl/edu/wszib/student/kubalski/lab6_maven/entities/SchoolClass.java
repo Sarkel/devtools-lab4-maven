@@ -3,10 +3,7 @@ package pl.edu.wszib.student.kubalski.lab6_maven.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.PositiveOrZero;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Year;
 import java.util.List;
@@ -15,8 +12,8 @@ import java.util.List;
 @Table(schema = "lab6_maven")
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Getter
+@Setter
 public class SchoolClass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

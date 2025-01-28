@@ -3,19 +3,16 @@ package pl.edu.wszib.student.kubalski.lab6_maven.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Positive;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(schema = "lab6_maven")
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
 @Getter
 public class StudentGrade {
     @Id

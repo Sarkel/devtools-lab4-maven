@@ -10,9 +10,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import pl.edu.wszib.student.kubalski.lab6_maven.routing.Route;
-import pl.edu.wszib.student.kubalski.lab6_maven.entities.SchoolClass;
 import pl.edu.wszib.student.kubalski.lab6_maven.routing.RouteService;
 import pl.edu.wszib.student.kubalski.lab6_maven.services.domain.schoolclass.SchoolClassService;
+import pl.edu.wszib.student.kubalski.lab6_maven.services.domain.schoolclass.dto.SchoolClassWithStudentCountDTO;
 
 import java.util.List;
 
@@ -26,25 +26,33 @@ public class SchoolClassListViewController {
     private final RouteService routeService;
 
     @FXML
-    private TableView<SchoolClass> schoolClassTableView;
+    private TableView<SchoolClassWithStudentCountDTO> schoolClassTableView;
 
-    private final ObservableList<SchoolClass> items = FXCollections.observableArrayList();
+    private final ObservableList<SchoolClassWithStudentCountDTO> items = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        TableColumn<SchoolClass, String> nameColumn = new TableColumn<>("Name");
+        TableColumn<SchoolClassWithStudentCountDTO, String> nameColumn = new TableColumn<>("Name");
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         schoolClassTableView.getColumns().add(nameColumn);
 
-        TableColumn<SchoolClass, String> teacherNameColumn = new TableColumn<>("Teacher Name");
+        TableColumn<SchoolClassWithStudentCountDTO, String> teacherNameColumn = new TableColumn<>("Teacher Name");
         teacherNameColumn.setCellValueFactory(new PropertyValueFactory<>("teacherName"));
         schoolClassTableView.getColumns().add(teacherNameColumn);
 
-        TableColumn<SchoolClass, String> gradeLevelColumn = new TableColumn<>("Grade Level");
+        TableColumn<SchoolClassWithStudentCountDTO, String> gradeLevelColumn = new TableColumn<>("Grade Level");
         gradeLevelColumn.setCellValueFactory(new PropertyValueFactory<>("gradeLevel"));
         schoolClassTableView.getColumns().add(gradeLevelColumn);
 
-        List<SchoolClass> schoolClasses = schoolClassService.findAll();
+        TableColumn<SchoolClassWithStudentCountDTO, String> schoolYearColumn = new TableColumn<>("School Year");
+        schoolYearColumn.setCellValueFactory(new PropertyValueFactory<>("schoolYear"));
+        schoolClassTableView.getColumns().add(schoolYearColumn);
+
+        TableColumn<SchoolClassWithStudentCountDTO, String> studentCountColumn = new TableColumn<>("Student Count");
+        studentCountColumn.setCellValueFactory(new PropertyValueFactory<>("studentCount"));
+        schoolClassTableView.getColumns().add(studentCountColumn);
+
+        List<SchoolClassWithStudentCountDTO> schoolClasses = schoolClassService.findAllWithStudentCount();
         items.addAll(schoolClasses);
         schoolClassTableView.setItems(items);
     }
@@ -56,7 +64,7 @@ public class SchoolClassListViewController {
 
     @FXML
     public void goToSchoolClassDetails() {
-        SchoolClass selectedSchoolClass = schoolClassTableView.getSelectionModel().getSelectedItem();
+        SchoolClassWithStudentCountDTO selectedSchoolClass = schoolClassTableView.getSelectionModel().getSelectedItem();
         routeService.switchScene(Route.SCHOOL_CLASS_DETAILS, selectedSchoolClass.getId());
     }
 }

@@ -1,13 +1,13 @@
 package pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 
-@Getter
-@Setter
-public class StudentWithAverageGradeDTO {
+@Builder
+@Data
+public class StudentDTO {
     private Long id;
     private String firstName;
     private String lastName;
-    private Integer averageGrade;
+    private Long schoolClassId;
 }
