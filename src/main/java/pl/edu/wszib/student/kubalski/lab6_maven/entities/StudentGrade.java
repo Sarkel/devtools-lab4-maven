@@ -16,6 +16,7 @@ import java.time.LocalDate;
 @Getter
 public class StudentGrade {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Max(5)

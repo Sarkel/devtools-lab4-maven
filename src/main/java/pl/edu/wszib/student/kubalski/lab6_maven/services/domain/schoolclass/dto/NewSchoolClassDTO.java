@@ -3,6 +3,7 @@ package pl.edu.wszib.student.kubalski.lab6_maven.services.domain.schoolclass.dto
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Builder
 @Getter

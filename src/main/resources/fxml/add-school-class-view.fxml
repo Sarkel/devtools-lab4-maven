@@ -12,21 +12,17 @@
 
     <Text>Add School Class</Text>
 
-    <Label labelFor="nameTextField">Enter class name</Label>
     <TextField fx:id="nameTextField" promptText="Enter class name"/>
-    <Label fx:id="nameErrorLabel" textFill="red" visible="false" labelFor="nameTextField"/>
+    <Label fx:id="nameErrorLabel" textFill="red" visible="false"/>
 
-    <Label labelFor="teacherNameTextField">Enter teacher name</Label>
     <TextField fx:id="teacherNameTextField" promptText="Enter teacher name"/>
-    <Label fx:id="teacherNameErrorLabel" textFill="red" visible="false" labelFor="teacherNameTextField"/>
+    <Label fx:id="teacherNameErrorLabel" textFill="red" visible="false"/>
 
-    <Label labelFor="gradeLevelTextField">Enter grade level</Label>
     <TextField fx:id="gradeLevelTextField" promptText="Enter grade level"/>
-    <Label fx:id="gradeLevelErrorLabel" textFill="red" visible="false" labelFor="gradeLevelTextField"/>
+    <Label fx:id="gradeLevelErrorLabel" textFill="red" visible="false"/>
 
-    <Label labelFor="schoolYearTextField">Enter school year</Label>
     <TextField fx:id="schoolYearTextField" promptText="Enter school year"/>
-    <Label fx:id="schoolYearErrorLabel" textFill="red" visible="false" labelFor="schoolYearTextField"/>
+    <Label fx:id="schoolYearErrorLabel" textFill="red" visible="false"/>
 
     <VBox spacing="10.0">
         <Button text="Save" onAction="#save"/>
