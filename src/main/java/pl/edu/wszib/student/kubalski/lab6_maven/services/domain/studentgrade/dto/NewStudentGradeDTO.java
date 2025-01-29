@@ -1,19 +1,16 @@
 package pl.edu.wszib.student.kubalski.lab6_maven.services.domain.studentgrade.dto;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
 
 import java.time.LocalDate;
 
-@Setter
-@Getter
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class StudentGradeDTO {
-    private Long id;
+@Getter
+public class NewStudentGradeDTO {
     private Long studentId;
     private Long schoolClassId;
-    private Integer grade;
-    private Integer weight;
+    private String grade;
+    private String weight;
     private LocalDate date;
 }

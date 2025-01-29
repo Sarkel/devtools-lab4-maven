@@ -9,6 +9,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import pl.edu.wszib.student.kubalski.lab6_maven.routing.Route;
 import pl.edu.wszib.student.kubalski.lab6_maven.routing.RouteService;
@@ -22,6 +23,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
+@Scope("prototype")
 public class StudentDetailsViewController {
     private final RouteService routeService;
     private final StudentService studentService;

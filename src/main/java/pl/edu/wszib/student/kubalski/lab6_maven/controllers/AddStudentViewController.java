@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import pl.edu.wszib.student.kubalski.lab6_maven.routing.Route;
 import pl.edu.wszib.student.kubalski.lab6_maven.routing.RouteService;
@@ -15,6 +16,7 @@ import pl.edu.wszib.student.kubalski.lab6_maven.util.DmlResult;
 
 @Component
 @RequiredArgsConstructor
+@Scope("prototype")
 public class AddStudentViewController {
     private final RouteService routeService;
     private final StudentService studentService;

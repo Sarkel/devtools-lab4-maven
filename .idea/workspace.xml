@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4622f67-1d03-4b83-b5bf-691efd901bc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/studentgrade/StudentGradeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/studentgrade/dto/StudentGradeDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/studentgrade/dto/NewStudentGradeDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/controllers/AddStudentGradeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/controllers/AddStudentGradeViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/controllers/AddStudentViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/controllers/AddStudentViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/controllers/StudentDetailsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/controllers/StudentDetailsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/repositories/StudentGradeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/repositories/StudentGradeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/entities/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/entities/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/schoolclass/SchoolClassMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/schoolclass/SchoolClassMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/student/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/student/StudentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/studentgrade/StudentGradeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/studentgrade/StudentGradeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/studentgrade/StudentGradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/studentgrade/StudentGradeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/student-details-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/student-details-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/studentgrade/dto/StudentGradeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/studentgrade/dto/StudentGradeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/add-student-grade-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/add-student-grade-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +28,8 @@
       <list>
         <option value="Enum" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -162,28 +166,12 @@
       <workItem from="1737910863734" duration="22376000" />
       <workItem from="1737999734209" duration="39067000" />
       <workItem from="1738112757718" duration="670000" />
-      <workItem from="1738113436727" duration="9555000" />
+      <workItem from="1738113436727" duration="12532000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/services/domain/student/StudentService.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/wszib/student/kubalski/lab6_maven/controllers/AddStudentViewController.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
