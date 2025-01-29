@@ -12,7 +12,7 @@
     <Text fx:id="titleText"/>
     <VBox>
         <Button text="Go Back" onAction="#goBack" alignment="BASELINE_LEFT"/>
-        <Button text="Add grade" onAction="#addGrade" alignment="BASELINE_LEFT"/>
+        <Button text="Add Grade" onAction="#addGrade" alignment="BASELINE_LEFT"/>
     </VBox>
-<!--    <TableView fx:id="studentsTableView"/>-->
+    <TableView fx:id="studentGradesTableView"/>
 </VBox>

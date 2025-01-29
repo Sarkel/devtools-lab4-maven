@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface StudentGradeRepository extends JpaRepository<StudentGrade, Long> {
     List<StudentGrade> findAllByStudent_IdIn(Collection<Long> studentIds);
+
+    List<StudentGrade> findAllByStudent_Id(Long studentId);
 }

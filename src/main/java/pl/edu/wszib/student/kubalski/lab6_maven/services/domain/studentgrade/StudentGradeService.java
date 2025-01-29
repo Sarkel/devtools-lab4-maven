@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.edu.wszib.student.kubalski.lab6_maven.entities.StudentGrade;
 import pl.edu.wszib.student.kubalski.lab6_maven.repositories.StudentGradeRepository;
+import pl.edu.wszib.student.kubalski.lab6_maven.services.domain.studentgrade.dto.StudentGradeDTO;
 
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,13 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class StudentGradeService {
     private final StudentGradeRepository studentGradeRepository;
+    private final StudentGradeMapper studentGradeMapper;
+
+    public List<StudentGradeDTO> findStudentGradesByStudentId(Long studentId) {
+        return studentGradeRepository.findAllByStudent_Id(studentId).stream()
+                .map(studentGradeMapper::toDTO)
+                .toList();
+    }
 
     public Map<Long, Integer> getAverageGradesByStudentId(Set<Long> studentIds) {
         return studentGradeRepository.findAllByStudent_IdIn(studentIds)
