@@ -16,7 +16,7 @@ public class StudentGradeService {
     private final StudentGradeRepository studentGradeRepository;
 
     public Map<Long, Integer> getAverageGradesByStudentId(Set<Long> studentIds) {
-        return studentGradeRepository.findAllByStudentIds(studentIds)
+        return studentGradeRepository.findAllByStudent_IdIn(studentIds)
                 .stream()
                 .collect(Collectors.groupingBy(sg -> sg.getStudent().getId()))
                 .entrySet()

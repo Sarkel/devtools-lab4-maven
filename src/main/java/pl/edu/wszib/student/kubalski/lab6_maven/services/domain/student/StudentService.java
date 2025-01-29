@@ -38,7 +38,7 @@ public class StudentService {
     }
 
     public Map<Long, Integer> findCountBySchoolClassId(Set<Long> schoolClassIds) {
-        return studentRepository.findAllBySchoolClassIds(schoolClassIds)
+        return studentRepository.findAllBySchoolClass_IdIn(schoolClassIds)
                 .stream()
                 .collect(Collectors.groupingBy(
                         s -> s.getSchoolClass().getId(),

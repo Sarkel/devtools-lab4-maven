@@ -23,6 +23,7 @@ module pl.edu.wszib.student.kubalski.lab6_maven {
     opens pl.edu.wszib.student.kubalski.lab6_maven.services.domain.schoolclass.dto;
     opens pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student;
     opens pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student.dto;
+    opens pl.edu.wszib.student.kubalski.lab6_maven.services.domain.studentgrade;
     opens pl.edu.wszib.student.kubalski.lab6_maven.services.config;
     opens db.migration;
     opens pl.edu.wszib.student.kubalski.lab6_maven.routing;
@@ -37,6 +38,7 @@ module pl.edu.wszib.student.kubalski.lab6_maven {
     exports pl.edu.wszib.student.kubalski.lab6_maven.services.domain.schoolclass.dto;
     exports pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student;
     exports pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student.dto;
+    exports pl.edu.wszib.student.kubalski.lab6_maven.services.domain.studentgrade;
     exports pl.edu.wszib.student.kubalski.lab6_maven.routing;
     exports pl.edu.wszib.student.kubalski.lab6_maven.util;
 }

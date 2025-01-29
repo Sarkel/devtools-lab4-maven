@@ -10,8 +10,6 @@ import pl.edu.wszib.student.kubalski.lab6_maven.services.domain.student.dto.Stud
 public interface StudentMapper {
     StudentWithAverageGradeDTO toWithStudentCountDTO(Student source);
 
-    Student fromDTO(StudentDTO source);
-
     @Mapping(source = "schoolClass.id", target = "schoolClassId")
     StudentDTO toDTO(Student source);
 }
