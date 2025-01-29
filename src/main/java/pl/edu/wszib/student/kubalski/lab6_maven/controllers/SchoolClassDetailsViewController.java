@@ -37,6 +37,9 @@ public class SchoolClassDetailsViewController {
     private Text titleText;
 
     @FXML
+    private Text nameText;
+
+    @FXML
     private Text teacherNameText;
 
     @FXML
@@ -51,7 +54,7 @@ public class SchoolClassDetailsViewController {
 
         schoolClassService.findById(this.schoolClassId).ifPresentOrElse(
                 schoolClass -> {
-                    titleText.setText("School class details for " + schoolClass.getName());
+                    nameText.setText("Name: " + schoolClass.getName());
                     teacherNameText.setText("Teacher name: " + schoolClass.getTeacherName());
                     gradeLevelText.setText("Grade level: " + schoolClass.getGradeLevel());
                     schoolYearText.setText("School year: " + schoolClass.getSchoolYear());
