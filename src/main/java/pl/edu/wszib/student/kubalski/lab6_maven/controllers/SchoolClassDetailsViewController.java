@@ -34,14 +34,28 @@ public class SchoolClassDetailsViewController {
     private final ObservableList<StudentWithAverageGradeDTO> items = FXCollections.observableArrayList();
 
     @FXML
-    public Text titleText;
+    private Text titleText;
 
     @FXML
-    public void initialize() {
+    private Text teacherNameText;
+
+    @FXML
+    private Text gradeLevelText;
+
+    @FXML
+    private Text schoolYearText;
+
+    @FXML
+    private void initialize() {
         this.schoolClassId = routeService.getParams();
 
         schoolClassService.findById(this.schoolClassId).ifPresentOrElse(
-                schoolClass -> titleText.setText("School class details for " + schoolClass.getName()),
+                schoolClass -> {
+                    titleText.setText("School class details for " + schoolClass.getName());
+                    teacherNameText.setText("Teacher name: " + schoolClass.getTeacherName());
+                    gradeLevelText.setText("Grade level: " + schoolClass.getGradeLevel());
+                    schoolYearText.setText("School year: " + schoolClass.getSchoolYear());
+                },
                 () -> titleText.setText("Not found")
         );
 
@@ -63,18 +77,18 @@ public class SchoolClassDetailsViewController {
     }
 
     @FXML
-    public void goBack() {
+    private void goBack() {
         routeService.switchScene(Route.SCHOOL_CLASS_LIST);
     }
 
     @FXML
-    public void goToStudentDetails() {
+    private void goToStudentDetails() {
         StudentWithAverageGradeDTO selectedStudent = studentsTableView.getSelectionModel().getSelectedItem();
         routeService.switchScene(Route.STUDENT_DETAILS, selectedStudent.getId());
     }
 
     @FXML
-    public void addStudent() {
+    private void addStudent() {
         routeService.switchScene(Route.ADD_STUDENT, schoolClassId);
     }
 }

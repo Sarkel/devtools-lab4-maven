@@ -12,6 +12,7 @@ import java.util.List;
 @Table(schema = "lab6_maven")
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Getter
 @Setter
 public class SchoolClass {
