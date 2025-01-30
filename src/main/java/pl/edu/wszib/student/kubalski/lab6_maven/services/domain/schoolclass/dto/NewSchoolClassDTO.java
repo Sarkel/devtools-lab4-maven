@@ -17,7 +17,7 @@ public class NewSchoolClassDTO {
     private String teacherName; // todo: normalize database to store teacher in separate table
 
     @NotNull(message = "Name must not be empty")
-    @Pattern(regexp = "^\\d+$", message = "Grade Level needs to be positive number")
+    @Pattern(regexp = "^(1[0-3]|[1-9])$", message = "Grade Level needs to be positive number")
     private String gradeLevel;
 
     @NotNull(message = "Name must not be empty")

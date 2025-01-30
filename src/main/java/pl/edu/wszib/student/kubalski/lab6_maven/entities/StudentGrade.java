@@ -27,7 +27,6 @@ public class StudentGrade {
     @Max(3)
     @Positive
     @Column(nullable = false)
-    @ColumnDefault(value = "0")
     private int weight;
 
     @Column(nullable = false)
